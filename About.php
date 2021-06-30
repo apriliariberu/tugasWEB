@@ -86,36 +86,41 @@ if (!isset($_SESSION['login_user'])) {
           <!-- Sidebar Menu -->
           <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-              <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
               <li class="nav-item has-treeview menu-open">
                 <a href="user.php" class="nav-link active">
                   <i class="nav-icon fas fa-tachometer-alt"></i>
                   <p>
                     Home
-                    <i class="right fas fa-angle-left"></i>
+                    <i class=""></i>
                   </p>
                 </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a href="menu_pembeli.php" class="nav-link active">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Daftar Menu</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="pesanan_pembeli.php" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Pesanan</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="About.php" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>About</p>
-                    </a>
-                  </li>
-                </ul>
+              </li>
+            </ul>
+          </nav>
+
+          <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+              <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+
+
+              <li class="nav-item">
+                <a href="halamanproduk.php" class="nav-link">
+                  <i class="nav-icon fas fa-th"></i>
+                  <p>Daftar Produk</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pesanan.php" class="nav-link">
+                  <i class="nav-icon fas fa-th"></i>
+                  <p>Pesanan</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="About.php" class="nav-link">
+                  <i class="nav-icon fas fa-th"></i>
+                  <p>About</p>
+                </a>
               </li>
               <li class="nav-item">
                 <a href="logout.php" class="nav-link">
@@ -126,6 +131,7 @@ if (!isset($_SESSION['login_user'])) {
                   </p>
                 </a>
               </li>
+
 
 
 

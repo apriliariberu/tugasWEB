@@ -88,36 +88,94 @@ if (!isset($_SESSION['login_user'])) {
           <!-- Sidebar Menu -->
           <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-              <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
               <li class="nav-item has-treeview menu-open">
                 <a href="user.php" class="nav-link active">
                   <i class="nav-icon fas fa-tachometer-alt"></i>
                   <p>
                     Home
+                    <i class=""></i>
+                  </p>
+                </a>
+            </ul>
+          </nav>
+          <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+              <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+
+
+              <li class="nav-item has-treeview menu-open">
+                <a href="user.php" class="nav-link active">
+                  <i class="nav-icon fas fa-tachometer-alt"></i>
+                  <p>
+                    Daftar Produk
                     <i class="right fas fa-angle-left"></i>
                   </p>
                 </a>
+
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="menu_pembeli.php" class="nav-link active">
+                    <a href="alatmakan.php" class="nav-link active">
                       <i class="far fa-circle nav-icon"></i>
-                      <p>Daftar Menu</p>
+                      <p>Alat Makan</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="pesanan_pembeli.php" class="nav-link">
+                    <a href="cangkir.php" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
-                      <p>Pesanan</p>
+                      <p>Cangkir Keramik</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="About.php" class="nav-link">
+                    <a href="elektronik.php" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
-                      <p>About</p>
+                      <p>Elektronik</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="gelaskaca.php" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Gelas Kaca</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="mangkukkaca.php" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Mangkuk Kaca</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="periuk.php" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Periuk</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="rantang.php" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Rantang</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="toplesplastik.php" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Toples Plastik</p>
                     </a>
                   </li>
                 </ul>
+              </li>
+
+              <li class="nav-item">
+                <a href="pesanan_pembeli.php" class="nav-link">
+                  <i class="nav-icon fas fa-th"></i>
+                  <p>Pesanan</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="About.php" class="nav-link">
+                  <i class="nav-icon fas fa-th"></i>
+                  <p>About</p>
+                </a>
               </li>
               <li class="nav-item">
                 <a href="logout.php" class="nav-link">
@@ -128,6 +186,7 @@ if (!isset($_SESSION['login_user'])) {
                   </p>
                 </a>
               </li>
+
 
 
 

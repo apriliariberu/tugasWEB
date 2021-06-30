@@ -218,7 +218,7 @@ if (!isset($_SESSION['login_user'])) {
                     <div class="container-fluid">
                         <div class="row mb-2">
                             <div class="col-sm-12">
-                                <h1 class="m-0 text-black text-center">HALAMAN PEMBAYARAN</h1>
+                                <h1 class="m-0 text-black text-center">HALAMAN PENGIRIMAN</h1>
 
                             </div>
 

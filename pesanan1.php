@@ -5,7 +5,6 @@ if (!isset($_SESSION['login_user'])) {
 } else {
 ?>
 
-
     <!DOCTYPE html>
     <html>
 
@@ -35,6 +34,7 @@ if (!isset($_SESSION['login_user'])) {
         <link rel="stylesheet" href="template/plugins/summernote/summernote-bs4.css">
         <!-- Google Font: Source Sans Pro -->
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
     </head>
 
     <body class="hold-transition sidebar-mini layout-fixed">
@@ -94,11 +94,9 @@ if (!isset($_SESSION['login_user'])) {
                                         <i class=""></i>
                                     </p>
                                 </a>
+                            </li>
                         </ul>
                     </nav>
-
-
-
 
                     <nav class="mt-2">
                         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -106,83 +104,16 @@ if (!isset($_SESSION['login_user'])) {
                with font-awesome or any other icon font library -->
 
 
-                            <li class="nav-item has-treeview menu-open">
-                                <a href="user.php" class="nav-link active">
-                                    <i class="nav-icon fas fa-tachometer-alt"></i>
-                                    <p>
-                                        Daftar Produk
-                                        <i class="right fas fa-angle-left"></i>
-                                    </p>
+                            <li class="nav-item">
+                                <a href="halamanproduk.php" class="nav-link">
+                                    <i class="nav-icon fas fa-th"></i>
+                                    <p>Daftar Produk</p>
                                 </a>
-
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="alatmakan.php" class="nav-link active">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Alat Makan</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="cangkir.php" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Cangkir Keramik</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="elektronik.php" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Elektronik</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="gelaskaca.php" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Gelas Kaca</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="mangkukkaca.php" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Mangkuk Kaca</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="periuk.php" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Periuk</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="rantang.php" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Rantang</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="toplesplastik.php" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Toples Plastik</p>
-                                        </a>
-                                    </li>
-                                </ul>
                             </li>
-
                             <li class="nav-item">
                                 <a href="pesanan_pembeli.php" class="nav-link">
                                     <i class="nav-icon fas fa-th"></i>
                                     <p>Pesanan</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="pembayaran.php" class="nav-link">
-                                    <i class="nav-icon fas fa-th"></i>
-                                    <p>Pembayaran</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="pengiriman.php" class="nav-link">
-                                    <i class="nav-icon fas fa-th"></i>
-                                    <p>Pengiriman</p>
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -218,27 +149,126 @@ if (!isset($_SESSION['login_user'])) {
                     <div class="container-fluid">
                         <div class="row mb-2">
                             <div class="col-sm-12">
-                                <h1 class="m-0 text-black text-center">HALAMAN PEMBAYARAN</h1>
+                                <h1 class="m-0 text-black text-center">RESTORAN DESSERT KELONGTONG</h1>
 
-                            </div>
+                            </div><!-- /.col -->
 
-                        </div>
-                    </div>
+                        </div><!-- /.row -->
+                    </div><!-- /.container-fluid -->
                 </div>
+                <!-- /.content-header -->
 
                 <!-- Main content -->
 
 
+                <!-- Jumbotron -->
+                <!-- <div class="jumbotron jumbotron-fluid text-center" style="background-color: #CCF5FC; ">
+                    <div class="container">
+                        <h1 class="display-8"><span class="font-weight-bold">RESTORAN KELONGTONG BARU</span></h1>
+                        <hr>
+                        <p class="lead font-weight-bold">"Selamat Datang di Beranda Admin"</p>
+                    </div>
+                </div> -->
+                <!-- Akhir Jumbotron -->
+                <!-- Menu -->
 
-                <div class="container">
+                <div class="card card-danger card-outline card-outline-tabs">
+                    <div class="card-header p-0 border-bottom-0">
+                        <ul class="nav nav-tabs" id="custom-tabs-four-tab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link text-dark px-3 active" id="manifest-tab" data-toggle="pill" href="#manifest-tab-content" role="tab" aria-controls="manifest-tab-content" aria-selected="true">
+                                    <i class="fas fa-tasks mr-2"></i> Pesanan
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" id="history-manifest-tab" data-toggle="pill" href="#history-manifest-tab-content" role="tab" aria-controls="history-manifest-tab-content" aria-selected="false"><i class="fas fa-history mr-2"></i> History Pesanan</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-body">
+                        <div class="tab-content" id="">
+                            <div class="tab-pane fade active show" id="manifest-tab-content" role="tabpanel" aria-labelledby="manifest-tab">
+                                <table class="table table-bordered" id="example">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th scope="col">No.</th>
+                                            <th scope="col">ID Pemesanan</th>
+                                            <th scope="col">Tanggal Pesan</th>
+                                            <th scope="col">Total Bayar</th>
+                                            <th scope="col">Status</th>
+                                            <th scope="col">Opsi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php $nomor = 1; ?>
+                                        <?php
+                                        $ambil = mysqli_query($koneksi, 'SELECT * FROM pemesanan');
+                                        $result = mysqli_fetch_all($ambil, MYSQLI_ASSOC);
+                                        ?>
+                                        <?php foreach ($result as $result) : ?>
 
+                                            <tr>
+                                                <th scope="row"><?php echo $nomor; ?></th>
+                                                <td><?php echo $result["id_pemesanan"]; ?></td>
+                                                <td><?php echo $result["tanggal_pemesanan"]; ?></td>
+                                                <td>Rp. <?php echo number_format($result["total_belanja"]); ?></td>
+                                                <td><?php echo $result['status']; ?></td>
+                                                <td>
 
+                                                    <a href="detail_pesanan.php?id=<?php echo $result['id_pemesanan'] ?>" class="badge badge-primary">Detail</a>
+                                                    <a href="clear_pesanan.php?id=<?php echo $result['id_pemesanan'] ?>" class="badge badge-danger">Hapus Data</a>
+                                                    <a href="laporan.php?id=<?php echo $result['id_pemesanan'] ?>" class="badge badge-success" target="_blank">Cetak</a>
+                                                    <a href="packing.php?id=<?php echo $result['id_pemesanan'] ?>" class="badge badge-warning">packing</a>
+                                                </td>
+                                            </tr>
+                                            <?php $nomor++; ?>
+                                        <?php endforeach; ?>
+                                    </tbody>
+                                </table>
+                            </div>
 
+                            <div class="tab-pane fade active" id="history-manifest-tab-content" role="tabpanel" aria-labelledby="manifest-tab">
+                                <table class="table table-bordered" id="history">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th scope="col">ID</th>
+                                            <th scope="col">Tanggal Pesan</th>
+                                            <th scope="col">Total Bayar</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                        $ambil = mysqli_query($koneksi, 'SELECT * FROM packing');
+                                        $result = mysqli_fetch_all($ambil, MYSQLI_ASSOC);
+                                        ?>
+                                        <?php foreach ($result as $result) : ?>
 
+                                            <tr>
+                                                <td><?php echo $result["id"]; ?></td>
+                                                <td><?php echo $result["tgl_pesan"]; ?></td>
+                                                <td>Rp. <?php echo number_format($result["total"]); ?></td>
+                                                <td>
+                                                    <a href="laporan.php?id=<?php echo $result['id'] ?>" class="badge badge-success" target="_blank">Cetak</a>
+                                                </td>
+                                            </tr>
+                                        <?php endforeach; ?>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- /.card -->
                 </div>
-                <!--END MAIN content -->
-            </div>
+                <!-- Akhir Menu -->
 
+
+
+                <!-- /.content -->
+            </div>
+            <!-- /.content-wrapper -->
             <footer class="main-footer">
                 <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong>
                 All rights reserved.
@@ -289,8 +319,16 @@ if (!isset($_SESSION['login_user'])) {
         <script src="template/dist/js/pages/dashboard.js"></script>
         <!-- AdminLTE for demo purposes -->
         <script src="template/dist/js/demo.js"></script>
+        <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('#example').DataTable();
+                $('#history').DataTable();
+
+            });
+        </script>
     </body>
 
     </html>
-
 <?php } ?>

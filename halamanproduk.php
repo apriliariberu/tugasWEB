@@ -5,7 +5,6 @@ if (!isset($_SESSION['login_user'])) {
 } else {
 ?>
 
-
     <!DOCTYPE html>
     <html>
 
@@ -35,6 +34,7 @@ if (!isset($_SESSION['login_user'])) {
         <link rel="stylesheet" href="template/plugins/summernote/summernote-bs4.css">
         <!-- Google Font: Source Sans Pro -->
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
     </head>
 
     <body class="hold-transition sidebar-mini layout-fixed">
@@ -94,11 +94,9 @@ if (!isset($_SESSION['login_user'])) {
                                         <i class=""></i>
                                     </p>
                                 </a>
+                            </li>
                         </ul>
                     </nav>
-
-
-
 
                     <nav class="mt-2">
                         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -106,83 +104,16 @@ if (!isset($_SESSION['login_user'])) {
                with font-awesome or any other icon font library -->
 
 
-                            <li class="nav-item has-treeview menu-open">
-                                <a href="user.php" class="nav-link active">
-                                    <i class="nav-icon fas fa-tachometer-alt"></i>
-                                    <p>
-                                        Daftar Produk
-                                        <i class="right fas fa-angle-left"></i>
-                                    </p>
-                                </a>
-
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="alatmakan.php" class="nav-link active">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Alat Makan</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="cangkir.php" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Cangkir Keramik</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="elektronik.php" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Elektronik</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="gelaskaca.php" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Gelas Kaca</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="mangkukkaca.php" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Mangkuk Kaca</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="periuk.php" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Periuk</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="rantang.php" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Rantang</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="toplesplastik.php" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Toples Plastik</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-
                             <li class="nav-item">
-                                <a href="pesanan_pembeli.php" class="nav-link">
+                                <a href="halamanproduk.php" class="nav-link">
+                                    <i class="nav-icon fas fa-th"></i>
+                                    <p>Daftar Produk</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="pesanan.php" class="nav-link">
                                     <i class="nav-icon fas fa-th"></i>
                                     <p>Pesanan</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="pembayaran.php" class="nav-link">
-                                    <i class="nav-icon fas fa-th"></i>
-                                    <p>Pembayaran</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="pengiriman.php" class="nav-link">
-                                    <i class="nav-icon fas fa-th"></i>
-                                    <p>Pengiriman</p>
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -218,40 +149,129 @@ if (!isset($_SESSION['login_user'])) {
                     <div class="container-fluid">
                         <div class="row mb-2">
                             <div class="col-sm-12">
-                                <h1 class="m-0 text-black text-center">HALAMAN PEMBAYARAN</h1>
+                                <h1 class="m-0 text-black text-center">HALAMAN INPUT DATA PRODUK</h1>
 
-                            </div>
+                            </div><!-- /.col -->
 
-                        </div>
-                    </div>
+                        </div><!-- /.row -->
+                    </div><!-- /.container-fluid -->
                 </div>
+                <!-- /.content-header -->
 
                 <!-- Main content -->
 
 
-
+                <!-- Jumbotron -->
+                <!-- <div class="jumbotron jumbotron-fluid text-center" style="background-color: #CCF5FC; ">
+                    <div class="container">
+                        <h1 class="display-8"><span class="font-weight-bold">RESTORAN KELONGTONG BARU</span></h1>
+                        <hr>
+                        <p class="lead font-weight-bold">"Selamat Datang di Beranda Admin"</p>
+                    </div>
+                </div> -->
+                <!-- Akhir Jumbotron -->
+                <!-- Menu -->
                 <div class="container">
+                    <div class="card">
+                        <div class="card-body">
+                            <a href="tambah_menu.php" class="btn btn-info"><i class="fas fa-plus-circle"></i>TAMBAH DATA PRODUK</a>
+                        </div>
+                    </div>
+
+                    <div class="container">
+                        <?php
+
+                        include('koneksi.php');
+
+                        $query = mysqli_query($koneksi, 'SELECT * FROM produk');
+                        $result = mysqli_fetch_all($query, MYSQLI_ASSOC);
 
 
+                        ?>
 
 
+                        <div class="card card-primary card-outline">
+                            <div class="card-body">
+                                <table class="table table-bordered" id="example">
+                                    <thead class="thead-light">
+                                        <tr class="text-center">
+                                            <th scope="col">No</th>
+                                            <th scope="col">Nama Produk</th>
+                                            <th scope="col">Jenis Produk</th>
+                                            <th scope="col">Stok</th>
+                                            <th scope="col">Harga</th>
+                                            <th scope="col">Gambar</th>
+                                            <th scope="col">Opsi</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <?php $nomor = 1; ?>
+                                        <?php
+                                        $ambil = mysqli_query($koneksi, 'SELECT * FROM produk');
+                                        $result = mysqli_fetch_all($ambil, MYSQLI_ASSOC);
+                                        ?>
+                                        <?php foreach ($result as $result) : ?>
+
+                                            <tr>
+                                                <th scope="row" class="text-center"><?php echo $nomor; ?></th>
+
+                                                <td><?php echo $result["nama_menu"]; ?></td>
+                                                <td class="text-center"><?php echo $result["jenis_menu"]; ?></td>
+                                                <td class="text-center"><?php echo $result["stok"]; ?></td>
+                                                <td class="text-center"><?php echo $result["harga"]; ?></td>
+                                                <td class="text-center"><?php echo "<img src='upload/$result[gambar]' width='70' height='90' />"; ?></td>
+
+                                                <td>
+                                                    <div class="row mt-4">
+                                                        <div class="col-6">
+                                                            <a href="edit_menu.php?id_menu=<?php echo $result['id_menu']  ?>" class="btn btn-info btn-sm btn-block">EDIT</a>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <a href="hapus_menu.php?id_menu=<?php echo $result['id_menu']  ?>" class="btn btn-danger btn-sm btn-block text-light">DELETE</a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+
+                                            </tr>
+                                            <?php $nomor++; ?>
+                                        <?php endforeach; ?>
+                                    </tbody>
+
+                                </table>
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- Akhir Menu -->
                 </div>
-                <!--END MAIN content -->
+
+
+                <!-- /.content -->
             </div>
+        </div>
+        <!-- Akhir Menu -->
 
-            <footer class="main-footer">
-                <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong>
-                All rights reserved.
-                <div class="float-right d-none d-sm-inline-block">
-                    <b>Version</b> 3.0.2
-                </div>
-            </footer>
 
-            <!-- Control Sidebar -->
-            <aside class="control-sidebar control-sidebar-dark">
-                <!-- Control sidebar content goes here -->
-            </aside>
-            <!-- /.control-sidebar -->
+
+        <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+        <footer class="main-footer">
+            <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong>
+            All rights reserved.
+            <div class="float-right d-none d-sm-inline-block">
+                <b>Version</b> 3.0.2
+            </div>
+        </footer>
+
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+        </aside>
+        <!-- /.control-sidebar -->
         </div>
         <!-- ./wrapper -->
 
@@ -289,8 +309,14 @@ if (!isset($_SESSION['login_user'])) {
         <script src="template/dist/js/pages/dashboard.js"></script>
         <!-- AdminLTE for demo purposes -->
         <script src="template/dist/js/demo.js"></script>
+        <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('#example').DataTable();
+            });
+        </script>
     </body>
 
     </html>
-
 <?php } ?>

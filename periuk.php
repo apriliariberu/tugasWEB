@@ -86,6 +86,8 @@ if (!isset($_SESSION['login_user'])) {
           <!-- Sidebar Menu -->
           <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+              <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
               <li class="nav-item has-treeview menu-open">
                 <a href="user.php" class="nav-link active">
                   <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -94,17 +96,9 @@ if (!isset($_SESSION['login_user'])) {
                     <i class=""></i>
                   </p>
                 </a>
-            </ul>
-          </nav>
 
 
-
-
-          <nav class="mt-2">
-            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-              <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-
+              </li>
 
               <li class="nav-item has-treeview menu-open">
                 <a href="user.php" class="nav-link active">
@@ -218,7 +212,7 @@ if (!isset($_SESSION['login_user'])) {
           <div class="container-fluid">
             <div class="row mb-2">
               <div class="col-sm-12">
-                <h1 class="m-0 text-black text-center">RESTORAN DESSERT KELONGTONG</h1>
+                <h1 class="m-0 text-black text-center">Silahkan Pilih Produk Periuk Favorit Mu</h1>
 
               </div><!-- /.col -->
 
@@ -229,48 +223,97 @@ if (!isset($_SESSION['login_user'])) {
 
         <!-- Main content -->
 
-        <div class="col-10">
-          <!-- Jumbotron -->
-          <!-- <div class="jumbotron jumbotron-fluid text-center" style="background-color: #CCF5FC; ">
+
+        <!-- Jumbotron -->
+        <!-- <div class="jumbotron jumbotron-fluid text-center" style="background-color: #CCF5FC; ">
                     <div class="container">
                         <h1 class="display-8"><span class="font-weight-bold">RESTORAN KELONGTONG BARU</span></h1>
                         <hr>
                         <p class="lead font-weight-bold">"Selamat Datang di Beranda Admin"</p>
                     </div>
                 </div> -->
-          <!-- Akhir Jumbotron -->
-          <!-- Menu -->
+        <!-- Akhir Jumbotron -->
+        <!-- Menu -->
 
-          <div class="container">
+        <div class="container">
 
 
 
-            <div class="row">
-              <div class="col-md-6 d-flex justify-content-end">
-                <div class="card bg-dark text-white border-light">
-                  <img src="images/m221.jpg" class="card-img" alt="Lihat Daftar Menu">
-                  <div class="card-img-overlay mt-5 text-center">
-                    <a href="menu_pembeli.php" class="btn btn-primary">LIHAT DAFTAR DESSERT</a>
+          <div class="row mt-3">
+
+            <?php
+
+            include('koneksi.php');
+
+            $query = mysqli_query($koneksi, 'SELECT * FROM produk WHERE jenis_menu="Periuk";');
+            $result = mysqli_fetch_all($query, MYSQLI_ASSOC);
+
+
+            ?>
+
+            <?php foreach ($result as $result) : ?>
+
+              <div class="col-md-3 mt-6">
+                <div class="card brder-dark">
+
+                  <div class="card-body">
+                    <div class="row">
+                      <img src="upload/<?php echo $result['gambar'] ?>" style="width: 90%; height: 140px; margin-top: 0px; display: block; margin: auto;" class="card-img-top" alt="...">
+                    </div>
+                    <div class="col mt-2">
+                      <h5 class="card-title font-weight-bold"><?php echo $result['nama_menu'] ?></h5><br>
+                      <label class="card-text harga"><strong>Rp.</strong> <?php echo number_format($result['harga']); ?></label><br>
+                    </div>
+                    <div class="row">
+
+                      <div class="col-6">
+                        <a href=" beli.php?id_menu=<?php echo $result['id_menu']; ?>" class="btn btn-primary btn-sm btn-block ">BELI</a>
+                      </div>
+
+
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="col-md-6 d-flex justify-content-end">
-                <div class="card bg-dark text-white border-light">
-                  <img src="images/m221.jpg" class="card-img" alt="Lihat Pesanan">
-                  <div class="card-img-overlay mt-5 text-center">
-                    <a href="pesanan_pembeli.php" class="btn btn-primary">LIHAT PESANAN ANDA</a>
-                  </div>
-                </div>
-              </div>
 
-            </div>
+            <?php endforeach; ?>
           </div>
-          <!-- Akhir Menu -->
-
         </div>
+        <!-- Akhir Menu -->
+        <!-- Button trigger modal -->
 
-        <!-- /.content -->
+
+
       </div>
+
+      <!-- /.content -->
+
+      <script>
+        $(function() {
+          $('.pop').on('click', function() {
+            $('.imagepreview').attr('src', $(this).find('img').attr('src'));
+            $('#imagemodal').modal('show');
+          });
+        });
+      </script>
+
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+      <script>
+        function readURL(input) { // Mulai membaca inputan gambar
+          if (input.files && input.files[0]) {
+            var reader = new FileReader(); // Membuat variabel reader untuk API FileReader
+
+            reader.onload = function(e) { // Mulai pembacaan file
+              $('#preview_gambar') // Tampilkan gambar yang dibaca ke area id #preview_gambar
+                .attr('src', e.target.result)
+                .width(150); // Menentukan lebar gambar preview (dalam pixel)
+              //.height(200); // Jika ingin menentukan lebar gambar silahkan aktifkan perintah pada baris ini
+            };
+
+            reader.readAsDataURL(input.files[0]);
+          }
+        }
+      </script>
       <!-- /.content-wrapper -->
       <footer class="main-footer">
         <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong>
@@ -322,6 +365,7 @@ if (!isset($_SESSION['login_user'])) {
     <script src="template/dist/js/pages/dashboard.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="template/dist/js/demo.js"></script>
+
   </body>
 
   </html>

@@ -86,8 +86,6 @@ if (!isset($_SESSION['login_user'])) {
           <!-- Sidebar Menu -->
           <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-              <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
               <li class="nav-item has-treeview menu-open">
                 <a href="user.php" class="nav-link active">
                   <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -96,9 +94,13 @@ if (!isset($_SESSION['login_user'])) {
                     <i class=""></i>
                   </p>
                 </a>
+            </ul>
+          </nav>
+          <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+              <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
 
-
-              </li>
 
               <li class="nav-item has-treeview menu-open">
                 <a href="user.php" class="nav-link active">
@@ -168,6 +170,18 @@ if (!isset($_SESSION['login_user'])) {
                 </a>
               </li>
               <li class="nav-item">
+                <a href="pembayaran.php" class="nav-link">
+                  <i class="nav-icon fas fa-th"></i>
+                  <p>Pembayaran</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pengiriman.php" class="nav-link">
+                  <i class="nav-icon fas fa-th"></i>
+                  <p>Pengiriman</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="About.php" class="nav-link">
                   <i class="nav-icon fas fa-th"></i>
                   <p>About</p>
@@ -200,7 +214,7 @@ if (!isset($_SESSION['login_user'])) {
           <div class="container-fluid">
             <div class="row mb-2">
               <div class="col-sm-12">
-                <h1 class="m-0 text-black text-center">Silahkan Pilih Produk Favorit Mu</h1>
+                <h1 class="m-0 text-black text-center">Silahkan Pilih Produk Cangkir Favorit Mu</h1>
 
               </div><!-- /.col -->
 
@@ -233,7 +247,7 @@ if (!isset($_SESSION['login_user'])) {
 
             include('koneksi.php');
 
-            $query = mysqli_query($koneksi, 'SELECT * FROM produk WHERE jenis_menu="Makanan";');
+            $query = mysqli_query($koneksi, 'SELECT * FROM produk WHERE jenis_menu="Cangkir Keramik";');
             $result = mysqli_fetch_all($query, MYSQLI_ASSOC);
 
 
